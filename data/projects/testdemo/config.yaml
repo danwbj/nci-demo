@@ -1,0 +1,25 @@
+scm:
+    type: git
+    repository: http://211.149.154.87/sd/sd.git
+    rev: master' '
+
+buildEvery:
+    #build project every 5 minutes
+    time: "0 */5 * * * *"
+    #but only if there is scm changes
+    withScmChangesOnly: true
+
+#notify when build fails or build status changes (according to previous status)
+notify:
+    #configure account for sending notifications
+    #this settings will be consumed by mail notification plugin
+    #mail:
+        #host: smtp.gmail.com
+        #port: 587
+        #auth:
+            #user: your_sender_login@gmail.com
+            #pass: your_sender_password
+
+steps:
+    - name: run
+      cmd: ls
